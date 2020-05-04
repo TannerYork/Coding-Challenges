@@ -3,7 +3,7 @@
 # Given a collection of distinct integers, return all possible permutations.
 
 
-# This is an O
+# This algorithms time complexity is O(n^2)
 def permute(nums):
     if len(nums) == 0:
         return []
@@ -11,11 +11,11 @@ def permute(nums):
         return [nums]
 
     permutes = []
-    for i in range(len(nums)):
+    for i in range(len(nums)):  # O(n)
         m = nums[i]
         remLst = nums[:i] + nums[i+1:]
 
-        for p in permute(remLst):
+        for p in permute(remLst):  # O(n)
             permutes.append([m] + p)
     return permutes
 
