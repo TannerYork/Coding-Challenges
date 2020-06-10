@@ -4,7 +4,6 @@
 # What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
 
-# I know you can solving this problem with pure math but what's the fun in that?
 def find_smallest_multiple(num):
     current_number = num
     while True:
