@@ -13,5 +13,5 @@ def isPowerOfThree(n):
 
 
 if __name__ == '__main__':
-    print(isPowerOfThree(19684))
-    print(isPowerOfThree(27))
+    print(isPowerOfThree(27))  # True
+    print(isPowerOfThree(19684))  # False
