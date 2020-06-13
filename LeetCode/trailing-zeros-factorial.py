@@ -1,20 +1,15 @@
-# Trailing Zero Factorial from CTI-ISP-2020 # 
+# Trailing Zero Factorial from LeetCode # 
 
 # Given an integer n, return the number of trailing zeroes in n!.
 
-# Fast Solution #
 def fast_trailing_zero_factorial(n):
   trailing_zeros = 0
+  current_multiple = n
   
-  # Iterate over the multiples of five
-  multiplier = 1
-  while True:
-    if n < 5*multiplier:
-      if n > 24: # 
-        trailing_zeros += 1
-      return trailing_zeros
-    trailing_zeros += 1
-    multiplier += 1
+  while current_multiple / 5 >= 1:
+    trailing_zeros += int(current_multiple/5)
+    current_multiple /= 5
+  return trailing_zeros
 
 # Slow solutions #
 def factorial_of(n):
