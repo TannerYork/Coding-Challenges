@@ -13,13 +13,25 @@ def k_frequent_words(text, k):
             word_counts[word] += 1
         else:
             word_counts[word] = 1
-    key_values = list(zip(word_counts.values(), word_counts.keys()))
-    key_values.sort(reverse=True)
+    
+    
+    # Old version that makes the function O(jlogj) where j is the number of individual words
+    # key_values = list(zip(word_counts.values(), word_counts.keys()))
+    # key_values.sort(reverse=True)
 
-    words = []
+    # words = []
+    # for i in range(k):
+    #     words.append(key_values[i][1])
+    # return words
+
+    # New version that makes the function O(j**2) where j is the number of individual words
+    output = []
     for i in range(k):
-        words.append(key_values[i][1])
-    return words
+        max_value = max(word_counts, key=lambda x: word_counts[x])
+        del word_counts[max_value]
+        output.append(max_value)
+    return output
+
 
 
 most_frequent = k_frequent_words('two two three two five six six four four', 2)
